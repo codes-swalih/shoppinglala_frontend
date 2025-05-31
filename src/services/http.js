@@ -20,9 +20,12 @@ function getToken() {
   return '';
 }
 
-const baseURL = process.env.BASE_URL;
+const baseURL = process.env.NODE_ENV === 'production'
+  ? process.env.BASE_URL
+  : 'http://localhost:3002';
+
 const http = axios.create({
-  baseURL: baseURL + `/api`,
+  baseURL: baseURL + '/api',
   timeout: 30000
 });
 
