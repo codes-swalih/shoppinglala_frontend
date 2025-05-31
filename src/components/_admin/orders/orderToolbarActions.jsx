@@ -68,3 +68,20 @@ export default function OrderToolbarActions({ data }) {
     </Box>
   );
 }
+
+// Remove direct PDF generation imports
+// import { ... } from '@react-pdf/renderer';
+
+const handlePdfGeneration = async () => {
+  try {
+    const response = await fetch('/api/generate-pdf', {
+      method: 'POST',
+      body: JSON.stringify(orderData)
+    });
+    const { url } = await response.json();
+    // Handle the PDF URL (e.g., open in new tab)
+    window.open(url, '_blank');
+  } catch (error) {
+    console.error('Error generating PDF:', error);
+  }
+};

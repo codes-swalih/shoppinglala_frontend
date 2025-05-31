@@ -24,6 +24,17 @@ const nextConfig = {
       },
     ];
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Don't attempt to load these modules on the client side
+      config.resolve.fallback = {
+        fs: false,
+        path: false,
+        crypto: false,
+      };
+    }
+    return config;
+  },
   images: {
     domains: ['nextall.vercel.app"', 'res.cloudinary.com']
   }
