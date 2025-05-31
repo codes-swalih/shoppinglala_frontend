@@ -72,6 +72,7 @@ export default function OrderToolbarActions({ data }) {
 // Remove direct PDF generation imports
 // import { ... } from '@react-pdf/renderer';
 
+// eslint-disable-next-line no-unused-vars
 const handlePdfGeneration = async () => {
   try {
     const response = await fetch('/api/generate-pdf', {

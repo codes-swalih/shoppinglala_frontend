@@ -2,7 +2,13 @@
 
 import React from 'react';
 
+// mui
+// eslint-disable-next-line no-unused-vars
+import { Container, Typography } from '@mui/material';
 
+// components
+// eslint-disable-next-line no-unused-vars
+import HeaderBreadcrumbs from 'src/components/headerBreadcrumbs';
 
 const PrivacyPolicy = () => {
   const htmlFile = `
@@ -180,7 +186,7 @@ const PrivacyPolicy = () => {
 <ul>
 <li>By email: shoppinglala@gmail.com</li>
 </ul>
-  `
+  `;
   return (
     <div>
     {/* <LandingNavbar /> */}

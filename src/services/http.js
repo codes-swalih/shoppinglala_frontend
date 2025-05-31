@@ -20,9 +20,10 @@ function getToken() {
   return '';
 }
 
-const baseURL = process.env.NODE_ENV === 'production'
-  ? process.env.BASE_URL
-  : 'https://shoppinglala-backend.vercel.app';
+const baseURL =
+  process.env.NODE_ENV === 'production'
+    ? process.env.BASE_URL
+    : 'https://shoppinglala-backend.vercel.app';
 
 const http = axios.create({
   baseURL: baseURL + '/api',

@@ -38,12 +38,13 @@ export default function Subscription() {
       }
     }
 
-    const timer = setTimeout(() => {
-      setOpen(true);
-    }, 10000); //
-
-    return () => clearTimeout(timer);
-  }, []);
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setOpen(true);
+  }, 10000);
+  
+  clearTimeout(timer); // Remove return statement to fix the warning
+}, []);
 
   //   api integrate
   const formik = useFormik({
@@ -159,4 +160,5 @@ export default function Subscription() {
       </Dialog>
     </React.Fragment>
   );
+  });
 }
