@@ -40,7 +40,7 @@
     "fs": "^0.0.1-security",
     "lodash": "^4.17.21",
     "negotiator": "^0.6.3",
-    "next": "^15.3.3",
+    "next": "^14.2.29",
     "next-nprogress-bar": "^2.1.2",
     "next-share": "^0.27.0",
     "nodemailer": "^6.9.11",
