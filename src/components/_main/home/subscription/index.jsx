@@ -38,7 +38,7 @@ export default function Subscription() {
       }
     }
 
-useEffect(() => {
+React.useEffect(() => {
   const timer = setTimeout(() => {
     setOpen(true);
   }, 10000);
