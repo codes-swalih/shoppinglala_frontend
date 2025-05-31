@@ -8,18 +8,20 @@ import ProductList from 'src/components/_main/products';
 // api
 import * as api from 'src/services';
 
-export const dynamic = 'error';
+// Change from error to force-dynamic to prevent build-time generation
+export const dynamic = 'force-dynamic';
 export const revalidate = 10;
 
-export async function generateStaticParams() {
-  const { data } = await api.getSubCategorySlugs();
-  return data?.map((cat) => {
-    return {
-      subCategory: cat.slug,
-      category: cat.parentCategory.slug
-    };
-  });
-}
+// Remove generateStaticParams since we're using dynamic rendering
+// export async function generateStaticParams() {
+//   const { data } = await api.getSubCategorySlugs();
+//   return data?.map((cat) => {
+//     return {
+//       subCategory: cat.slug,
+//       category: cat.parentCategory.slug
+//     };
+//   });
+// }
 
 export async function generateMetadata({ params }) {
   const { data: response } = await api.getSubCategoryBySlug(params.subCategory);

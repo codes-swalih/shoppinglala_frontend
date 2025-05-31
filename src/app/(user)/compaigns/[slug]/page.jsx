@@ -8,18 +8,20 @@ import ProductList from 'src/components/_main/products';
 // api
 import * as api from 'src/services';
 
-export const dynamic = 'error';
+// Change from error to force-dynamic to prevent build-time generation
+export const dynamic = 'force-dynamic';
 export const revalidate = 10;
 
-export async function generateStaticParams() {
-  const { data } = await api.getCompaignSlugs();
-  const mapped = data?.map((compaign) => {
-    return {
-      slug: compaign.slug
-    };
-  });
-  return mapped;
-}
+// Remove generateStaticParams since we're using dynamic rendering
+// export async function generateStaticParams() {
+//   const { data } = await api.getCompaignSlugs();
+//   const mapped = data?.map((compaign) => {
+//     return {
+//       slug: compaign.slug
+//     };
+//   });
+//   return mapped;
+// }
 
 export async function generateMetadata({ params }) {
   const { data: response } = await api.getCompaignBySlug(params.slug);
