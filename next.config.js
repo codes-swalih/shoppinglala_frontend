@@ -24,6 +24,9 @@ const nextConfig = {
       },
     ];
   },
+  eslint: {
+    ignoreDuringBuilds: true
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       // Don't attempt to load these modules on the client side

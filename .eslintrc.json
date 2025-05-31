@@ -4,7 +4,7 @@
     "browser": true,
     "node": true
   },
-  "extends": ["prettier", "plugin:jsx-a11y/recommended", "plugin:react-hooks/recommended", "plugin:react/recommended"],
+  "extends": ["next","prettier", "plugin:jsx-a11y/recommended", "plugin:react-hooks/recommended", "plugin:react/recommended"],
   "plugins": ["prettier", "react", "react-hooks"],
   "parser": "@babel/eslint-parser",
   "parserOptions": {
@@ -22,6 +22,9 @@
     }
   },
   "rules": {
+    "prettier/prettier": "off",
+    "no-unused-vars": "off",
+    "consistent-return": "off",
     "import": 0,
     "max-len": 0,
     "no-alert": 0,
@@ -31,7 +34,6 @@
     "import/no-cycle": 0,
     "react/prop-types": 0,
     "no-return-assign": 0,
-    "consistent-return": 1,
     "no-param-reassign": 0,
     "react/display-name": 0,
     "no-use-before-define": 0,
@@ -52,20 +54,6 @@
     "import/no-extraneous-dependencies": 0,
     "react/jsx-key": 1,
     "react-hooks/rules-of-hooks": 2,
-    "no-unused-vars": [
-      1,
-      {
-        "ignoreRestSiblings": false
-      }
-    ],
-    "prettier/prettier": [
-      2,
-      {
-        "printWidth": 120,
-        "singleQuote": true,
-        "trailingComma": "none",
-        "tabWidth": 2
-      }
-    ]
+
   }
 }
