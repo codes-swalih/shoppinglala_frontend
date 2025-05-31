@@ -27,7 +27,7 @@ const RefundReturnPolicy = () => {
         Refund and Return Policy
       </Typography>
       <Typography variant="body1" paragraph>
-        Thank you for shopping at Nextall. If you are not entirely satisfied with your purchase, we're here to help.
+        Thank you for shopping at shoppinglala. If you are not entirely satisfied with your purchase, we're here to help.
       </Typography>
       <Typography variant="h6" component="h2" gutterBottom>
         Returns
@@ -59,7 +59,7 @@ const RefundReturnPolicy = () => {
         Contact Us
       </Typography>
       <Typography variant="body1" paragraph>
-        If you have any questions on how to return your item to us, contact us at support@nextall.com.
+        If you have any questions on how to return your item to us, contact us at support@shoppinglala.com.
       </Typography>
     </Container>
   );
