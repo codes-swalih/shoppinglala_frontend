@@ -29,6 +29,7 @@ export default function Subscription() {
     localStorage.setItem('subscriptionDismissedAt', Date.now().toString());
   };
   // useEffect to open the dialog when the component mounts
+  // Combine the two useEffect hooks into one
   React.useEffect(() => {
     const dismissedAt = localStorage.getItem('subscriptionDismissedAt');
     if (dismissedAt) {
@@ -38,13 +39,12 @@ export default function Subscription() {
       }
     }
 
-React.useEffect(() => {
-  const timer = setTimeout(() => {
-    setOpen(true);
-  }, 10000);
+    const timer = setTimeout(() => {
+      setOpen(true);
+    }, 10000);
   
-  clearTimeout(timer); // Remove return statement to fix the warning
-}, []);
+    return () => clearTimeout(timer); // Proper cleanup function
+  }, []); // Empty dependency array
 
   //   api integrate
   const formik = useFormik({
@@ -160,5 +160,5 @@ React.useEffect(() => {
       </Dialog>
     </React.Fragment>
   );
-  });
-}
+  }
+
