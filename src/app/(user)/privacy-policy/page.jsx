@@ -2,11 +2,7 @@
 
 import React from 'react';
 
-// mui
-import { Container, Typography } from '@mui/material';
 
-// components
-import HeaderBreadcrumbs from 'src/components/headerBreadcrumbs';
 
 const PrivacyPolicy = () => {
   const htmlFile = `
@@ -188,10 +184,7 @@ const PrivacyPolicy = () => {
   return (
     <div>
     {/* <LandingNavbar /> */}
-    <div
-      className=" ml-10"
-      dangerouslySetInnerHTML={{ __html: htmlFile }}
-    ></div>
+    <div className="ml-10" dangerouslySetInnerHTML={{ __html: htmlFile }}></div>
     {/* <Footer /> */}
   </div>
   );
