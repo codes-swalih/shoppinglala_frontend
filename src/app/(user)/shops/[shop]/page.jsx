@@ -9,17 +9,17 @@ import ProductList from 'src/components/_main/products';
 import * as api from 'src/services';
 
 export const revalidate = 10;
-export const dynamic = 'error';
+export const dynamic = 'force-dynamic';
 
-export async function generateStaticParams() {
-  const { data } = await api.getShopSlugs();
-  const mapped = data?.map((shop) => {
-    return {
-      shop: shop.slug
-    };
-  });
-  return mapped;
-}
+// export async function generateStaticParams() {
+//   const { data } = await api.getShopSlugs();
+//   const mapped = data?.map((shop) => {
+//     return {
+//       shop: shop.slug
+//     };
+//   });
+//   return mapped;
+// }
 
 export async function generateMetadata({ params }) {
   const { data: response } = await api.getShopBySlug(params.shop);

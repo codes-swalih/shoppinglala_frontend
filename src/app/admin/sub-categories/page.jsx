@@ -14,6 +14,10 @@ export const metadata = {
   authors: 'Nextall'
 };
 
+// Add these lines at the top after imports
+export const dynamic = 'force-dynamic';
+export const revalidate = 10;
+
 export default async function Categories() {
   const { data: categories } = await api.getAllCategoriesByAdmin();
   return (

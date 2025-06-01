@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 // components
@@ -7,6 +8,9 @@ import HeaderBreadcrumbs from 'src/components/headerBreadcrumbs';
 // api
 import * as api from 'src/services';
 
+// Add these lines at the top after imports
+export const dynamic = 'force-dynamic';
+export const revalidate = 10;
 // Meta information
 export const metadata = {
   title: 'Products - Nextall',

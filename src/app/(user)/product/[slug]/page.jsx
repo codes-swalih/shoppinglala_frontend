@@ -15,17 +15,19 @@ import HeaderBreadcrumbs from 'src/components/headerBreadcrumbs';
 // api
 import * as api from 'src/services';
 
+// Change from error to force-dynamic to prevent build-time generation
 export const revalidate = 10;
-export const dynamic = 'error';
+export const dynamic = 'force-dynamic';
 
-export async function generateStaticParams() {
-  const { data } = await api.getProductSlugs();
-  return data?.map((product) => {
-    return {
-      slug: product.slug
-    };
-  });
-}
+// Remove generateStaticParams since we're using dynamic rendering
+// export async function generateStaticParams() {
+//   const { data } = await api.getProductSlugs();
+//   return data?.map((product) => {
+//     return {
+//       slug: product.slug
+//     };
+//   });
+// }
 
 export async function generateMetadata({ params }) {
   const { data: response } = await api.getProductDetails(params.slug);

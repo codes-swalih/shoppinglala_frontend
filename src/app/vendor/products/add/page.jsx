@@ -7,6 +7,10 @@ import AddProduct from 'src/components/_admin/products/addProduct';
 // api
 import * as api from 'src/services';
 
+// Add these lines to prevent static generation
+export const dynamic = 'force-dynamic';
+export const revalidate = 10;
+
 export default async function page() {
   const data1 = await api.getAllCategories();
   const data2 = await api.getAllBrandsByAdmin();
