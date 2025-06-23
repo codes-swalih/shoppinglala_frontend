@@ -13,24 +13,36 @@ export const metadata = {
   applicationName: 'Nextall',
   authors: 'Nextall'
 };
-export default async function page() {
-  const { data: shops } = await api.getAllShopsByAdmin();
-  return (
-    <div>
-      <HeaderBreadcrumbs
-        admin
-        heading="Payouts"
-        links={[
-          {
-            name: 'Dashboard',
-            href: '/admin'
-          },
-          {
-            name: 'Payouts'
-          }
-        ]}
-      />
-      <PayoutsList shops={shops} />
-    </div>
-  );
+export const dynamic = 'force-dynamic';
+export const revalidate = 10;
+
+export default async function PayoutsPage() {
+  try {
+    const { data: shops } = await api.getAllShopsByAdmin();
+    return (
+      <div>
+        <HeaderBreadcrumbs
+          admin
+          heading="Payouts"
+          links={[
+            {
+              name: 'Dashboard',
+              href: '/admin'
+            },
+            {
+              name: 'Payouts'
+            }
+          ]}
+        />
+        <PayoutsList shops={shops} />
+      </div>
+    );
+  } catch (error) {
+    console.error('Error fetching shops:', error);
+    return (
+      <Typography variant="h3" color="error.main" textAlign="center">
+        Error loading payouts. Please try again later.
+      </Typography>
+    );
+  }
 }
