@@ -23,7 +23,7 @@ function getToken() {
 const baseURL =
   process.env.NODE_ENV === 'production'
     ? process.env.BASE_URL
-    : 'https://shoppinglala-backend.vercel.app';
+    : 'https://smeraassosiates.com';
 
 const http = axios.create({
   baseURL: baseURL + '/api',
