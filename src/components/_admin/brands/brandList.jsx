@@ -12,7 +12,6 @@ import { Dialog } from '@mui/material';
 import DeleteDialog from 'src/components/dialog/delete';
 import Table from 'src/components/table/table';
 import Brand from 'src/components/table/rows/brand';
-
 const TABLE_HEAD = [
   { id: 'name', label: 'Brands', alignRight: false, sort: true },
   { id: 'description', label: 'Description', alignRight: false },
