@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 function getToken() {
   const cname = 'token';
   if (typeof window !== 'undefined') {
